@@ -1,9 +1,16 @@
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
   position: relative;
   overflow: hidden;
+}
+
+.inner {
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .left {
@@ -159,7 +166,7 @@
 }
 
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
+  .inner { grid-template-columns: 1fr; }
   .right { display: none; }
   .left { padding: 120px 24px 80px; }
 }

@@ -11,7 +11,9 @@ export default function Home() {
       <Hero />
       <Marquee />
       <About />
-      <Work />
+      <div className="container">
+        <Work />
+      </div>
       <Contact />
       <Footer />
     </>

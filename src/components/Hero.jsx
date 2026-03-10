@@ -3,6 +3,7 @@ import styles from './Hero.module.css'
 export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
+      <div className={styles.inner}>
       <div className={styles.left}>
         <div className={styles.tag}>
           <span className={styles.dot} />
@@ -42,6 +43,7 @@ export default function Hero() {
             <div className={styles.cardLabel}>Ships, always</div>
           </div>
         </div>
+      </div>
       </div>
 
       <div className={styles.scroll}>

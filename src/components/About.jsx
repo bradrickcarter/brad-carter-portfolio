@@ -10,6 +10,7 @@ const skills = {
 export default function About() {
   return (
     <section id="about" className={styles.about}>
+      <div className={styles.inner}>
       <div className="section-eyebrow reveal" style={{ color: 'var(--lime)' }}>
         About me
       </div>
@@ -42,6 +43,7 @@ export default function About() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   )

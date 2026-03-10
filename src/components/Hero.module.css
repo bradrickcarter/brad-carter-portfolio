@@ -87,7 +87,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
 }
 
 .blob {

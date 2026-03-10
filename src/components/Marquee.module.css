@@ -1,0 +1,27 @@
+.wrap {
+  background: var(--ink);
+  color: var(--lime);
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.track {
+  display: inline-flex;
+  animation: marquee 20s linear infinite;
+}
+.track span {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 24px;
+}
+.sep {
+  color: var(--coral);
+  padding: 0 4px !important;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

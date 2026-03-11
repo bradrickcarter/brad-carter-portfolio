@@ -23,6 +23,7 @@ export const caseStudies = [
   },
   {
     slug: 'health-insights',
+    video: '/videos/health-insights.mov',
     title: 'Health Insights',
     subtitle: 'Baylor Scott & White',
     role: 'Lead UX/UI Designer',

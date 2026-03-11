@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Cursor from './components/Cursor'
@@ -7,7 +7,9 @@ import CaseStudy from './pages/CaseStudy'
 import { caseStudies } from './data/caseStudies'
 
 export default function App() {
-  // Scroll reveal observer
+  const location = useLocation()
+
+  // Scroll reveal observer — keyed to route so it re-runs on navigation
   useEffect(() => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -18,14 +20,19 @@ export default function App() {
       })
     }, { threshold: 0.12 })
 
-    const attach = () => {
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el))
-    }
-    attach()
-    // re-attach on route change via small delay
-    const timer = setTimeout(attach, 100)
-    return () => clearTimeout(timer)
-  })
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('visible')
+        } else {
+          io.observe(el)
+        }
+      })
+    }, 50)
+
+    return () => { clearTimeout(timer); io.disconnect() }
+  }, [location.pathname])
 
   return (
     <>

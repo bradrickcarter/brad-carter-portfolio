@@ -37,6 +37,18 @@ export default function CaseStudy({ study }) {
         </div>
       </div>
 
+      {/* Video */}
+      {study.video && (
+        <div className={styles.videoWrap}>
+          <video
+            className={styles.video}
+            src={study.video}
+            controls
+            playsInline
+          />
+        </div>
+      )}
+
       {/* Content */}
       <div className={styles.content}>
 
